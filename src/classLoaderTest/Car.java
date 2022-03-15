@@ -1,4 +1,4 @@
-package java.classLoaderTest;
+package src.classLoaderTest;
 
 public class Car {
 

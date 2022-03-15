@@ -1,4 +1,4 @@
-package java.leetcode;
+package src.leetcode.com;
 
 class ListNode {
     int val;
