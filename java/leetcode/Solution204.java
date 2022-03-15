@@ -1,5 +1,6 @@
+package java.leetcode;
+
 import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 class Solution204 {
 
