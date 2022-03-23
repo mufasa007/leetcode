@@ -5,7 +5,7 @@ public abstract class Sort {
     /*
     默认正序
      */
-    abstract void sort(int[] nums);
+    abstract void sort(int[] nums) throws Exception;
 
     void swap(int[] nums,int x, int y) {
         int mide = nums[x];

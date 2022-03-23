@@ -1,7 +1,7 @@
 package src.sort.com;
 
 public class SortTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int[] nums = new int[]{110,5,6,4,8,6,3,7,14,6};
 
 //        BubbleSort bubbleSort = new BubbleSort();
@@ -22,8 +22,11 @@ public class SortTest {
 //        CocktailSort cocktailSort = new CocktailSort();
 //        cocktailSort.sort(nums);
 
-        MergeSort mergeSort = new MergeSort();
-        mergeSort.sort(nums);
+//        MergeSort mergeSort = new MergeSort();
+//        mergeSort.sort(nums);
+
+        HeapSort heapSort = new HeapSort();
+        heapSort.sort(nums);
 
         System.out.println();
 
