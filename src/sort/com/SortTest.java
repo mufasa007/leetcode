@@ -19,9 +19,11 @@ public class SortTest {
 //        RadixSort radixSort = new RadixSort();
 //        radixSort.sort(nums);
 
-        CocktailSort cocktailSort = new CocktailSort();
-        cocktailSort.sort(nums);
+//        CocktailSort cocktailSort = new CocktailSort();
+//        cocktailSort.sort(nums);
 
+        MergeSort mergeSort = new MergeSort();
+        mergeSort.sort(nums);
 
         System.out.println();
 
