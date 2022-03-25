@@ -25,3 +25,6 @@ public class Solution167 {
     return new int[]{};
   }
 }
+/*
+https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/solution/yi-zhang-tu-gao-su-ni-on-de-shuang-zhi-zhen-jie-fa/
+ */
