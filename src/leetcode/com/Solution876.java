@@ -21,12 +21,12 @@ public class Solution876 {
 
     // 双指针，边界条件
     public static ListNode middleNode(ListNode head) {
-        int i=0;// i是快指针，j是慢指针
-        ListNode iNode = head,jNode = head;
-        while (iNode!=null){
+        int i = 0;// i是快指针，j是慢指针
+        ListNode iNode = head, jNode = head;
+        while (iNode != null) {
             iNode = iNode.next;
             i++;
-            if (i%2==0){
+            if (i % 2 == 0) {
                 jNode = jNode.next;
             }
         }
