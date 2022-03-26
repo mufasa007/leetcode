@@ -51,7 +51,6 @@ public class Solution509 {
   // 双缓存，速度最快
   public static int fib2(int n) {
     if (n <= 1) {
-      result.put(n, n);
       return n;
     }
 

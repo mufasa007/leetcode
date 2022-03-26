@@ -1,5 +1,7 @@
 package src.leetcode.com;
 
+import src.leetcode.com.common.ListNode;
+
 public class Solution19 {
     public static void main(String[] args) {
 

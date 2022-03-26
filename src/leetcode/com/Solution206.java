@@ -1,21 +1,7 @@
 package src.leetcode.com;
 
-class ListNode {
-    int val;
-    ListNode next;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
+import src.leetcode.com.common.ListNode;
 
 class Solution206 {
     public ListNode reverseList(ListNode head) {
