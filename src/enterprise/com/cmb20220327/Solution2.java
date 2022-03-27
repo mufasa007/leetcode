@@ -11,8 +11,26 @@ public class Solution2 {
             if(s == null && s.trim() == ""){
                 System.out.println("");
             }else {
-                // 双指针
-                char[] chars = s.toCharArray();
+                // 双指针 可以解决 就是麻烦，还是直接使用两个 StringBuffer
+                StringBuffer sb = new StringBuffer(s);
+                int len = sb.length();
+                int x=len-1,y=len-1,flag = 1;
+                while (0<=x && 0<y){
+                    if(('*'==sb.charAt(x)) ^ ('*'==s.charAt(y))){
+                        if(flag%2==1){
+                            x--;
+                        }else {
+                            y--;
+                        }
+                    }else {
+                        String str = sb.substring(x,x+1);
+                        sb.replace(x,x+1,sb.substring(y,y+1));
+                        sb.replace(y,y+1,str);
+                    }
+                }
+
+
+/*                char[] chars = s.toCharArray();
                 int len = chars.length;
                 StringBuffer stringBuffer1 = new StringBuffer();
                 StringBuilder stringBuffer2 = new StringBuilder();
@@ -23,7 +41,7 @@ public class Solution2 {
                         stringBuffer2.append(chars[i]);
                     }
                 }
-                System.out.println(stringBuffer1.append(stringBuffer2));
+                System.out.println(stringBuffer1.append(stringBuffer2));*/
             }
         }
     }

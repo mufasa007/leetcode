@@ -13,7 +13,7 @@ public class Solution120 {
         triangle.add(Arrays.asList(3,4));
         triangle.add(Arrays.asList(6,5,7));
         triangle.add(Arrays.asList(4,1,8,3));
-        int i = solution.minimumTotal(triangle);
+        solution.minimumTotal(triangle)
         System.out.println();
     }
 
