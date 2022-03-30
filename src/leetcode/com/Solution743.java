@@ -37,11 +37,12 @@ public class Solution743 {
             grap[time[0]-1][time[1]-1] = time[2];
         }
 
+        // 这里出现过问题，i应该是新加入的节点
         for (int i = 0; i < n; i++) {
             // 逐个节点进行遍历选择
             for (int j = 0; j < n; j++) {
                 for (int l = 0; l < n; l++) {
-                    grap[i][j] = Math.min(grap[i][j],grap[i][l]+grap[l][j]);
+                    grap[j][l] = Math.min(grap[j][l],grap[j][i]+grap[i][l]);
                 }
             }
         }
