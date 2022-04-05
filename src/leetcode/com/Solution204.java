@@ -51,6 +51,7 @@ class Solution204 {
         return list.size();
     }
 
+    // 埃氏筛
     public int countPrimes2(int n) {
         boolean[] isPrime = new boolean[n];
         int count = 0;
@@ -63,6 +64,27 @@ class Solution204 {
             }
         }
         return count;
+    }
+
+    // 线性埃塞法
+    public int countPrimes3(int n) {
+        List<Integer> primes = new ArrayList<Integer>();
+        int[] isPrime = new int[n];
+        Arrays.fill(isPrime, 1);
+
+        for (int i = 2; i < n; ++i) {
+            if (isPrime[i] == 1) {
+                primes.add(i);
+            }
+            // 二次筛选，如果已经在之前就被筛选过就直接跳出循环
+            for (int j = 0; j < primes.size() && i * primes.get(j) < n; ++j) {
+                isPrime[i * primes.get(j)] = 0;
+                if (i % primes.get(j) == 0) {
+                    break;
+                }
+            }
+        }
+        return primes.size();
     }
 
 
