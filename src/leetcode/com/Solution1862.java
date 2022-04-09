@@ -44,7 +44,7 @@ public class Solution1862 {
     private int mod = (int) (Math.pow(10, 9) + 7);
 
 
-    // fixme 待理解
+    // fixme 待理解 困难程度
     public int sumOfFlooredPairs1(int[] nums) {
         int N = 100010;
         int MOD = 1000000007;
