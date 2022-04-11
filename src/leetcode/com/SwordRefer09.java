@@ -3,9 +3,9 @@ package src.leetcode.com;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class SwordRefer9 {
+public class SwordRefer09 {
     public static void main(String[] args) {
-        SwordRefer9 solution = new SwordRefer9();
+        SwordRefer09 solution = new SwordRefer09();
 
         System.out.println();
     }
