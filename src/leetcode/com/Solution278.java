@@ -21,6 +21,26 @@ public class Solution278 {
         return left;
     }
 
+    // 2022.04.11 解题版本
+    public int firstBadVersion1(int n) {
+        if(isBadVersion(1)){
+            return 1;
+        }
+        int left = 1, right = n;
+        int mide = left + (right - left) / 2;
+        while (left < mide && mide < right) {
+            if (isBadVersion(mide)) {
+                // 是错误版本
+                right = mide;
+            } else {
+                // 不是错误版本
+                left = mide;
+            }
+            mide = left + (right - left) / 2;
+        }
+        return right;
+    }
+
     public boolean isBadVersion(int version){
         if(version<1702766719){
             return false;
