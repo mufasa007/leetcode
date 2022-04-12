@@ -6,7 +6,9 @@ import java.util.Set;
 public class SwordRefer03 {
     public static void main(String[] args) {
         SwordRefer03 solution = new SwordRefer03();
-
+//        int[] nums = {1,2,3,4,2};
+        int[] nums = {2, 3, 1, 0, 2, 5, 3};
+        int repeatNumber2 = solution.findRepeatNumber3(nums);
         System.out.println();
     }
 
@@ -15,7 +17,7 @@ public class SwordRefer03 {
      * 执行用时：2338 ms, 在所有 Java 提交中击败了5.01%的用户
      * 内存消耗：48.6 MB, 在所有 Java 提交中击败了60.53%的用户
      * */
-    // 双指针解法(时间复杂度高，空间复杂度低)
+    // 双指针解法(时间复杂度高，空间复杂度低) O(nlogn)
     public int findRepeatNumber(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -62,6 +64,23 @@ public class SwordRefer03 {
         }
         return repeat;
     }
+
+    // 快慢指针解法 fixme
+    public int findRepeatNumber3(int[] nums) {
+        int slow = nums[0],fast = nums[nums[0]];
+        while (slow!=fast){
+            slow=nums[slow];
+            fast=nums[nums[fast]];
+        }
+        slow = nums[slow];
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+        return fast;
+    }
+
+    // 二分查找
 
 }
 
