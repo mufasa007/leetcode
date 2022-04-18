@@ -3,6 +3,9 @@ package src.leetcode.com;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 跳表
+ */
 public class Solution1206 {
 
 
