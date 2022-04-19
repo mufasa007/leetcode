@@ -4,9 +4,8 @@ package src.leetcode.com;
 public class Solution479 {
 
     // 有一种方法叫做打表！！！
-    // 可以算作作弊行为！！！
     public int largestPalindrome(int n) {
-        switch (n){
+        switch (n) {
             case 1:
                 return 9;
             case 2:
@@ -28,11 +27,43 @@ public class Solution479 {
         }
     }
 
+    public int largestPalindrome1(int n) {
+        if (n == 1) {
+            return 9;
+        }
+
+        long upperBound = (long) (Math.pow(10, n) - 1);
+        long lowerBound = upperBound / 10 + 1;
+
+        long maxNumber = upperBound * upperBound;
+        long half = (long) (maxNumber / Math.pow(10, n));
+        boolean found = false;
+        long res = 0;
+        while (!found) {
+            res = createPalindrome(half);
+            for (long i = upperBound; i >= lowerBound; i--) {
+                if (i * i < res) {
+                    break;
+                }
+                if (res % i == 0) {
+                    found = true;
+                    break;
+                }
+            }
+            half--;
+        }
+        return (int) (res % 1337);
+    }
+
+    private long createPalindrome(long half) {
+        String pStr = half + new StringBuilder().append(half).reverse().toString();
+        return Long.valueOf(pStr);
+    }
+
 
     public static void main(String[] args) {
         Solution479 solution = new Solution479();
-        StringBuilder s = new StringBuilder();
-        StringBuffer stringBuffer = new StringBuffer();
+        int i = solution.largestPalindrome1(5);
         System.out.println();
     }
 }
