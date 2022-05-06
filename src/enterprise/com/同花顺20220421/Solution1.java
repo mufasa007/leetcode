@@ -36,9 +36,9 @@ public class Solution1 {
         // 遍历：进行计数，同时记录最大重复次数和最大重复次数的UUID
         for (String string : strings) {
             // 3种hash函数用于定位UUID存储的数据位标
-            int hashIndex1 = string.hashCode() % countMatrixArrangeLen;
-            int hashIndex2 = string.hashCode() * 17 % countMatrixArrangeLen;// 直接乘以质数，这个算是一种比较简单的改动
-            int hashIndex3 = string.hashCode() / 17 % countMatrixArrangeLen;// 直接除以质数
+            int hashIndex1 = Math.abs(HashUtils.rsHash(string)) % countMatrixArrangeLen;
+            int hashIndex2 = Math.abs(HashUtils.apHash(string)) % countMatrixArrangeLen;
+            int hashIndex3 = Math.abs(HashUtils.djbHash(string)) % countMatrixArrangeLen;
 
             countMatrix[hashIndex1][0]++;
             countMatrix[hashIndex2][1]++;
@@ -64,9 +64,9 @@ public class Solution1 {
         // 遍历：进行计数，同时记录最大重复次数和最大重复次数的UUID
         for (String string : strings) {
             // 3种hash函数用于定位UUID存储的数据位标
-            int hashIndex1 = string.hashCode() % countMatrixArrangeLen;
-            int hashIndex2 = string.hashCode() * 17 % countMatrixArrangeLen;// 直接乘以质数，这个算是一种比较简单的改动
-            int hashIndex3 = string.hashCode() / 17 % countMatrixArrangeLen;// 直接除以质数
+            int hashIndex1 = Math.abs(HashUtils.rsHash(string)) % countMatrixArrangeLen;
+            int hashIndex2 = Math.abs(HashUtils.apHash(string)) % countMatrixArrangeLen;
+            int hashIndex3 = Math.abs(HashUtils.djbHash(string)) % countMatrixArrangeLen;
 
             countMatrix[hashIndex1][0]++;
             countMatrix[hashIndex2][1]++;
@@ -79,7 +79,7 @@ public class Solution1 {
                 maxCount = curCount;
                 hashSet.clear();
                 hashSet.add(string);
-            }else if(maxCount == curCount){
+            } else if (maxCount == curCount) {
                 hashSet.add(string);
             }
         }
@@ -95,9 +95,9 @@ public class Solution1 {
         // 第一次遍历：进行计数，同时记录最大重复次数
         for (String string : strings) {
             // 3种hash函数用于定位UUID存储的数据位标
-            int hashIndex1 = string.hashCode() % countMatrixArrangeLen;
-            int hashIndex2 = string.hashCode() * 17 % countMatrixArrangeLen;// 直接乘以质数，这个算是一种比较简单的改动
-            int hashIndex3 = string.hashCode() / 17 % countMatrixArrangeLen;// 直接除以质数
+            int hashIndex1 = Math.abs(HashUtils.rsHash(string)) % countMatrixArrangeLen;
+            int hashIndex2 = Math.abs(HashUtils.apHash(string)) % countMatrixArrangeLen;
+            int hashIndex3 = Math.abs(HashUtils.djbHash(string)) % countMatrixArrangeLen;
 
             countMatrix[hashIndex1][0]++;
             countMatrix[hashIndex2][1]++;
@@ -110,7 +110,7 @@ public class Solution1 {
                 maxCount = curCount;
                 hashSet.clear();
                 hashSet.add(string);
-            }else if(maxCount == curCount){
+            } else if (maxCount == curCount) {
                 hashSet.add(string);
             }
         }
@@ -125,7 +125,7 @@ public class Solution1 {
             // 获取当前UUID的出现次数
             int curCount = Math.min(Math.min(countMatrix[hashIndex1][0], countMatrix[hashIndex2][1]), countMatrix[hashIndex3][2]);
 
-            if(maxCount == curCount){
+            if (maxCount == curCount) {
                 hashSet.add(string);
             }
         }
