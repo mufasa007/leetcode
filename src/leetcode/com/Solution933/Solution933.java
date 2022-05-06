@@ -1,5 +1,7 @@
 package src.leetcode.com.Solution933;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 
 public class Solution933 {
@@ -22,21 +24,16 @@ public class Solution933 {
  */
 class RecentCounter {
 
-    LinkedList<Integer> queue;
+    Deque<Integer> queue;
 
     public RecentCounter() {
-        queue = new LinkedList<>();
+        queue = new ArrayDeque<>();
     }
 
     public int ping(int t) {
-        queue.addFirst(t);
-        while (true) {
-            int lastTime = queue.peekLast();
-            if (t - lastTime > 3000) {
-                queue.pollLast();
-            } else {
-                break;
-            }
+        queue.offer(t);
+        while (queue.peek() < t - 3000) {
+            queue.poll();
         }
         return queue.size();
     }
