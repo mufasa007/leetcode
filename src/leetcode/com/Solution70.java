@@ -52,5 +52,21 @@ public class Solution70 {
         return climbStairs(n-1)+climbStairs(n-2);
     }
 
+    // 3,模拟法：
+    public static int climbStairs3(int n) {
+        if (n <= 2) {
+            return n;
+        }
+        int n1 = 1, n2 = 2;
+        for (int i = 3; i <= n; i++) {
+            if (i % 2 == 1) {
+                n1 += n2;
+            } else {
+                n2 += n1;
+            }
+        }
+        return n % 2 == 1 ? n1 : n2;
+    }
+
 
 }
