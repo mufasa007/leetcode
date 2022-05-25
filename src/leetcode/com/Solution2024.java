@@ -18,7 +18,7 @@ public class Solution2024 {
         max = 0;
         singleDeal(answerKey, 'T', k,0, 0, k);
         singleDeal(answerKey, 'F', k,0, 0, k);
-        return new Integer(this.max);
+        return this.max;
     }
 
     static int max = 0;
